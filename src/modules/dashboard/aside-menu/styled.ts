@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { xl } from '../../../ui';
+import {Color, xl} from '../../../ui';
 
 export const Aside = styled.aside`
   border-right: 1px solid #d7e7ff;
@@ -26,6 +26,7 @@ export const AsideHeadline = styled.div`
   flex: 1;
 `;
 export const AsideLogo = styled.div`
+  width: 100%;
   @media screen and (max-width: ${xl}) {
     display: flex;
     align-items: center;
@@ -35,12 +36,10 @@ export const AsideLogo = styled.div`
   }
 `;
 export const AsideHeadlineRole = styled.span`
-  margin-left: 5px;
-  font-size: 11px;
-  text-transform: uppercase;
-  font-weight: bold;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
   color: black;
-  margin-bottom: -0.15em;
 `;
 export const AsideCloseIcon = styled.label`
   cursor: pointer;
@@ -50,6 +49,7 @@ export const AsideCloseIcon = styled.label`
 export const InlineFlexDiv = styled.a`
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 export const NavigationWrapper = styled.div`
@@ -84,16 +84,16 @@ export const NavigationItem = styled.li<{ isActive?: boolean }>`
 
   svg path,
   svg circle {
-    fill: #a8ccff;
+    fill: ${Color.sapphire};
   }
 
   ${({ isActive }) =>
     isActive
       ? `
       padding: 0;
-      color: #005de2;
+      color: ${Color.sapphire};
       .navigation-item__link {
-        color: #005DE2 !important;
+        color: ${Color.sapphire} !important;
         background: white;
         border: 1px solid #d7e7ff;
         box-shadow: 0px 2px 4px rgba(0, 93, 226, 0.06);
@@ -104,7 +104,7 @@ export const NavigationItem = styled.li<{ isActive?: boolean }>`
       }
       
       svg path, svg circle {
-        fill: #005de2
+        fill: ${Color.sapphire};
       }
       `
       : ''}
@@ -132,7 +132,7 @@ export const NavigationLinkText = styled.span`
   font-weight: 600;
 
   .navigation-item--active & {
-    color: #005de2;
+    color: ${Color.sapphire};
   }
 `;
 
@@ -152,12 +152,12 @@ export const NavigationLink = styled<any>(Link)`
     fill: #BFC8D1!important;
   }
   `
-      : 'color: #6fa7f5;'}
+      : `color: ${Color.sapphire};`}
   width: 100%;
   line-height: 1.5;
 `;
 export const NavigationExternalLink = styled.a`
-  color: #6fa7f5;
+  color: ${Color.sapphire};
   display: flex;
   align-items: center;
   background: transparent;
@@ -191,7 +191,7 @@ export const WidgetWrapper = styled.div`
 `;
 export const LogoWrapper = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
 `
 export const NavigationDivider = styled.div`
   width: 90%;

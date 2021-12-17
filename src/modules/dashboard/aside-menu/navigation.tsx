@@ -215,12 +215,11 @@ const AsideMenu: React.FC<AsideMenuProps> = ({
     <AsideHeadline>
       <AsideLogo>
         <InlineFlexDiv href="/" className="aside-menu__logo">
-          <LogoWrapper>
             <Logo style={{marginRight: '16px'}} />
-            <LogoText />
-          </LogoWrapper>
-
-          <AsideHeadlineRole>{generateTitleText(userRole, isPartner)}</AsideHeadlineRole>
+            <LogoWrapper>
+              <LogoText />
+              <AsideHeadlineRole>{generateTitleText(userRole, isPartner)}</AsideHeadlineRole>
+            </LogoWrapper>
         </InlineFlexDiv>
 
         <AsideCloseIcon htmlFor={toggleId} className="aside-menu__close">
