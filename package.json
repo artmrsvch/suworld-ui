@@ -50,11 +50,11 @@
   "size-limit": [
     {
       "path": "dist/suworld-ui.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "300 KB"
     },
     {
       "path": "dist/suworld-ui.esm.js",
-      "limit": "10 KB"
+      "limit": "300 KB"
     }
   ],
   "devDependencies": {
@@ -76,6 +76,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "react-router-dom": "^6.2.1",
     "size-limit": "^7.0.4",
     "styled-components": "^5.3.3",
     "tsdx": "^0.14.1",
