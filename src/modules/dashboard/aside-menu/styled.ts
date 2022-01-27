@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import {Color, xl} from '../../../ui';
+import { Color, xl } from '../../../ui';
 
 export const Aside = styled.aside`
   border-right: 1px solid #d7e7ff;
@@ -191,7 +191,7 @@ export const WidgetWrapper = styled.div`
 export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 export const NavigationDivider = styled.div`
   width: 90%;
   min-height: 1px;
