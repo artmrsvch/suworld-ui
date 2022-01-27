@@ -14,6 +14,7 @@ const StyledRadio = styled(AntdRadio)`
     border-color: ${Color.lightGray};
 
     &:after {
+      margin: 0;
       background-color: ${Color.sapphire};
       width: 9px;
       height: 9px;

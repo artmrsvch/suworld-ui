@@ -25,5 +25,6 @@ export enum Color {
   strongBlue = '#042651',
   orange = '#FF7F03',
   smoGrey = '#F0F7FF',
+  fadeGray = '#E2E8F0',
   lightRed = '#FFF1F0',
 }

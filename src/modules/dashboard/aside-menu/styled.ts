@@ -26,12 +26,11 @@ export const AsideHeadline = styled.div`
   flex: 1;
 `;
 export const AsideLogo = styled.div`
+  display: flex;
   width: 100%;
   @media screen and (max-width: ${xl}) {
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding: 0 10px;
   }
 `;
