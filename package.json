@@ -85,6 +85,6 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "react-input-mask": "^2.0.4"
+    "react-input-mask": "^3.0.0-alpha.2"
   }
 }
