@@ -1,6 +1,7 @@
 export * from './ui'
 export * from './button'
 export * from './typography'
+export * from './inputMask'
 export * from './tabs'
 export * from './checkbox'
 export * from './input'
