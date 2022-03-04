@@ -1,12 +1,24 @@
 import styled from 'styled-components';
-import { Color, xs } from '../ui';
+import { Color, md, xs } from '../ui';
 
 type TitleProps = {
   fontSize?: string;
 };
 
+interface TypographyProps {
+  fontSize?: number;
+  lineHeight?: number;
+  color?: string;
+  textDecoration?: string;
+  fontWeight?: number;
+  cursor?: string;
+  hoverDecoration?: string;
+  xsFontSize?: number;
+  mdFontSize?: number;
+}
+
 export const Title = styled.h1<TitleProps>`
-  font-size: ${props => props.fontSize || '38px'};
+  font-size: ${(props) => props.fontSize || '38px'};
   color: ${Color.strongBlue};
   font-weight: 600;
   margin-bottom: 30px;
@@ -54,3 +66,32 @@ export const Prompt = styled.p`
     font-weight: normal;
   }
 `;
+export const Typography = styled.span<TypographyProps>(
+  ({
+    fontSize = 14,
+    lineHeight,
+    color = Color.strongBlue,
+    textDecoration,
+    fontWeight,
+    cursor,
+    hoverDecoration,
+    xsFontSize,
+    mdFontSize,
+  }) => ({
+    color,
+    lineHeight: lineHeight ? `${lineHeight}px` : `${fontSize}px`,
+    fontSize,
+    fontWeight,
+    textDecoration,
+    cursor,
+    ':hover': {
+      textDecoration: hoverDecoration,
+    },
+    [`@media screen and (max-width: ${md})`]: {
+      fontSize: mdFontSize,
+    },
+    [`@media screen and (max-width: ${xs})`]: {
+      fontSize: xsFontSize,
+    },
+  })
+);

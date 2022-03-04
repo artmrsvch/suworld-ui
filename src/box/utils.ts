@@ -22,6 +22,7 @@ export const calculateStyle = (props: any) =>
   Object.keys(props).reduce((acc, item) => {
     const property = styledObject[item];
     const value = props[item];
+
     if (property) {
       return typeof value === 'boolean'
         ? { ...acc, ...property }

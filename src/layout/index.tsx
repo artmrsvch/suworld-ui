@@ -1,6 +1,7 @@
 import React from 'react';
 import { Title, Subtitle, Prompt } from '../typography';
 import styled from 'styled-components';
+import {Color} from "../ui";
 
 interface PageProps {
   title?: string;
@@ -48,6 +49,7 @@ const SectionTitle = styled(Subtitle)<{
 `;
 const SectionSubtitle = styled(Prompt)`
   margin-bottom: 20px;
+  color: ${Color.strongBlue};
 `;
 
 export const Section: React.FC<SectionProps> = ({

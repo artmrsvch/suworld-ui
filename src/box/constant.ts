@@ -3,7 +3,7 @@ import { customXl, lg, md, sm, xl, xs, xxl } from '../ui';
 
 export const styledObject: any = {
   column: { flexDirection: 'column' },
-  wrap: { flexDirection: 'wrap' },
+  wrap: { flexWrap: 'wrap' },
   width: (size: string) => ({ width: size }),
   height: (size: string) => ({ height: size }),
   align: (align: AlignItems) => ({ alignItems: align }),
@@ -13,6 +13,8 @@ export const styledObject: any = {
   margin: (value: string) => ({ margin: value }),
   border: (param: string) => ({ padding: param }),
   mt: (px: string) => ({ marginTop: `${px}px` }),
+  borderRadius: (size: string | number) => ({ borderRadius: size }),
+  bgColor: (color: string) => ({ backgroundColor: color }),
   mb: (px: string) => ({ marginBottom: `${px}px` }),
   ml: (px: string) => ({ marginLeft: `${px}px` }),
   mr: (px: string) => ({ marginRight: `${px}px` }),
