@@ -38,7 +38,7 @@ export const AsideHeadlineRole = styled.span`
   margin-top: 5px;
   font-size: 14px;
   font-weight: 600;
-  color: black;
+  color: ${Color.strongBlue};
 `;
 export const AsideCloseIcon = styled.label`
   cursor: pointer;
