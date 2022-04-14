@@ -78,7 +78,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
 
     if (isProtectLink) {
       const modalConfig = {
-        title: 'Необходимо заполнить данные поставщика',
+        title: 'Необходимо заполнить данные продавца',
         content: (
           <p>Раздел станет доступным после заполнения информации на странице «Данные компании».</p>
         )
