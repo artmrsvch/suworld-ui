@@ -1,0 +1,212 @@
+import { Meta, Story } from '@storybook/react';
+import React from 'react';
+import { Layout, DashboardLayoutProps } from '../src';
+import SvgLogo from "../src/modules/dashboard/icons/SvgLogo";
+import { BrowserRouter } from 'react-router-dom';
+import {Tooltip} from "antd";
+
+const LinkIm = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M14.5 0.75H10.5C10.3011 0.75 10.1103 0.829018 9.96964 0.96967C9.82899 1.11032 9.74997 1.30109 9.74997 1.5C9.74997 1.69891 9.82899 1.88968 9.96964 2.03033C10.1103 2.17098 10.3011 2.25 10.5 2.25H12.6893L5.49997 9.43934C5.35995 9.58013 5.28147 9.77069 5.28174 9.96925C5.28201 10.1678 5.36101 10.3582 5.50141 10.4986C5.64181 10.639 5.83216 10.718 6.03072 10.7182C6.22928 10.7185 6.41984 10.64 6.56062 10.5L13.75 3.31066V5.5C13.75 5.69891 13.829 5.88968 13.9696 6.03033C14.1103 6.17098 14.3011 6.25 14.5 6.25C14.6989 6.25 14.8896 6.17098 15.0303 6.03033C15.1709 5.88968 15.25 5.69891 15.25 5.5V1.5C15.25 1.30109 15.1709 1.11032 15.0303 0.96967C14.8896 0.829018 14.6989 0.75 14.5 0.75Z"
+      fill="#A8CCFF"
+    />
+    <path
+      d="M14.5 7.75C14.3011 7.75 14.1103 7.82902 13.9697 7.96967C13.829 8.11032 13.75 8.30109 13.75 8.5V13.75H2.25V2.25H7.5C7.69891 2.25 7.88968 2.17098 8.03033 2.03033C8.17098 1.88968 8.25 1.69891 8.25 1.5C8.25 1.30109 8.17098 1.11032 8.03033 0.96967C7.88968 0.829018 7.69891 0.75 7.5 0.75H1.5C1.30109 0.75 1.11032 0.829018 0.96967 0.96967C0.829018 1.11032 0.75 1.30109 0.75 1.5V14.5C0.75 14.6989 0.829018 14.8897 0.96967 15.0303C1.11032 15.171 1.30109 15.25 1.5 15.25H14.5C14.6989 15.25 14.8897 15.171 15.0303 15.0303C15.171 14.8897 15.25 14.6989 15.25 14.5V8.5C15.25 8.30109 15.171 8.11032 15.0303 7.96967C14.8897 7.82902 14.6989 7.75 14.5 7.75Z"
+      fill="#A8CCFF"
+    />
+  </svg>
+);
+
+interface LinkToImProps {}
+
+const LinkToIm: React.FC<LinkToImProps> = () => (
+  <Tooltip title="Посмотреть профиль в магазине">
+    <div
+      role="link"
+      tabIndex={0}
+      onKeyDown={() => {
+        window.location.href = `https://im.dev.suworld.ru/shops/${'12345'}`;
+      }}
+      onClick={() => {
+        window.location.href = `https://im.dev.suworld.ru/shops/${'12345'}`;
+      }}>
+      <LinkIm />
+    </div>
+  </Tooltip>
+);
+
+const linksShort = [
+  {
+    text: 'Заказы',
+    to: '/',
+    icon: <SvgLogo />,
+    supplierOnly: true
+  },
+  {
+    text: 'Товары',
+    to: '/one',
+    icon: <SvgLogo />,
+    supplierOnly: true
+  },
+  {
+    text: 'Услуги',
+    to: '/two',
+    icon: <SvgLogo />,
+  },
+  {
+    text: 'Настройки магазина',
+    to: '/twod',
+    icon: <SvgLogo />,
+    supplierOnly: true
+  },
+  {
+    text: 'Клиенты',
+    to: '/twog',
+    icon: <SvgLogo />,
+    supplierOnly: true,
+    additionalWidget: <LinkToIm />
+  },
+  {
+    text: 'Отзывы',
+    to: '/onef',
+    icon: <SvgLogo />,
+    supplierOnly: true
+  }
+];
+const documentLinks = [
+  {
+    text: 'Отчеты по оплатам',
+    to: '/twof',
+    icon: <SvgLogo />,
+    supplierOnly: true
+  },
+  {
+    text: 'Документооборот',
+    to: '/three',
+    icon: <SvgLogo />
+  }
+];
+const supportsLink = [
+  {
+    text: 'Помощь',
+    to: '/sssss',
+    icon: <SvgLogo />,
+    supplierOnly: true
+  },
+  {
+    text: 'Сообщения',
+    to: '/thddddree',
+    icon: <SvgLogo />
+  },
+  {
+    text: 'Обратная связь',
+    to: '/thddddredde',
+    icon: <SvgLogo />
+  }
+];
+
+const externalLinks = [
+  {
+    text: 'Кабинет клиент',
+    to: 'https://suworld.ru',
+    icon: <SvgLogo />
+  },
+  {
+    text: 'Кабинет партнера',
+    to: 'https://suworld.ru',
+    icon: <SvgLogo />
+  },
+  {
+    text: 'Маркетплейс',
+    to: '/four',
+    icon: <SvgLogo />
+  }
+];
+
+const meta: Meta = {
+  title: 'Components/Лейаут',
+  component: Layout,
+  argTypes: {
+    children: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
+  parameters: {
+    controls: { expanded: true },
+  },
+};
+const headerWidgets = (
+  <>
+    <div
+      style={{
+        width: '150px',
+        height: '50px',
+        backgroundColor: 'darkcyan',
+        borderRadius: '4px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: '10px'
+      }}>
+      <SvgLogo />
+    </div>
+    <div
+      style={{
+        width: '40px',
+        height: '40px',
+        backgroundColor: 'greenyellow',
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+      <SvgLogo />
+    </div>
+  </>
+);
+export default meta;
+
+const Template: Story<DashboardLayoutProps> = args =><BrowserRouter> <Layout {...args} /> </BrowserRouter>;
+
+// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
+// https://storybook.js.org/docs/react/workflows/unit-testing
+export const Dashboard = Template.bind({});
+
+Dashboard.args = {
+  userRole: 'admin',
+  isHasSupplierStatus: true,
+  links: linksShort,
+  externalLinks,
+  documentsLinks: documentLinks,
+  supportLinks: supportsLink,
+  isPartner: false,
+  headerWidgets
+};
+
+Dashboard.argTypes = {
+  links: {
+    description: 'Список роутов навигации'
+  },
+  headerWidgets: {
+    description: 'Компонент с виджетами в шапку'
+  },
+  isHasSupplierStatus: {
+    description: 'Является ли пользователь поставщиком?'
+  },
+  isPartner: {
+    description: 'Применяется ли данный компонент в кабинете партнера?'
+  },
+  externalLinks: {
+    description: 'Список внешних ссылок системы Suworld'
+  },
+  userRole: {
+    description: 'Роль',
+    control: {
+      type: 'select',
+      options: ['admin', 'accountant', 'user', 'supplier', 'supplierModerator']
+    }
+  }
+};
