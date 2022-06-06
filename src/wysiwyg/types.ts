@@ -17,6 +17,7 @@ export interface DraftWysiwygProps {
   value?: string;
   onChange?: (html?: string) => void;
   boxContainer?: BoxProps;
+  placeholder?: string | undefined;
 }
 
 export enum EnumInlineStyle {

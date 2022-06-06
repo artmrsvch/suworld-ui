@@ -18,6 +18,7 @@ export const TextEditor: React.FC<DraftWysiwygProps> = ({
   onChange,
   value,
   boxContainer,
+  placeholder,
 }) => {
   const [editorState, setEditorState] = useState(wysiwygInitialState(value));
 
@@ -50,6 +51,7 @@ export const TextEditor: React.FC<DraftWysiwygProps> = ({
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
         onEditorStateChange={onEditorStateChange}
+        placeholder={placeholder}
         toolbar={{
           options: ['inline', 'fontSize', 'list', 'textAlign', 'remove'],
           inline: {
